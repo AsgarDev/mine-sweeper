@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Démineur{% endblock %}
+
+{% block body %}
+    <h1>{{ 'Jeu du démineur'|upper }}</h1>
+    <twig:Map :width="10" :height="10" :difficulty="10"></twig:Map>
+{% endblock %}

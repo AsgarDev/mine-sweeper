@@ -1,3 +1,84 @@
+@import url("https://fonts.googleapis.com/css?family=VT323");
+
+html {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
 body {
-    background-color: skyblue;
+    font-family: "VT323";
+    color: white;
+    background-color: #000019;
+    border-radius: 15px;
+    border: 1px solid dimgrey;
+    margin: auto;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.map {
+    display: grid;
+    justify-content: center;
+    --size: 50px;
+    grid-template-columns: repeat(var(--width), var(--size));
+    grid-template-rows: repeat(var(--height), var(--size));
+    margin: 4rem;
+}
+ 
+button:disabled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    border: none;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.actions {
+    display: flex;
+    padding: 50px 0;
+}
+
+.reset-button {
+    min-width: 152px;
+    min-height: 60px;
+    z-index: 10;
+}
+
+.reset-button:hover {
+    background: mediumslateblue;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+}
+
+.bomb {
+    width: 70%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(at 30% 30%, white 12%, black 15%);  
+}
+
+
+#game-over {
+    text-align: center;
+    font-size: 8em;
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -webkit-animation: pulsate 2.5s ease-out;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-text-fill-color: darkviolet;
+}
+
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
 }

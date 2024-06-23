@@ -1,0 +1,30 @@
+<div {{ attributes }} class="map" style="--width:{{ mineSweeper.width }}; --height:{{ mineSweeper.height }};">
+    {% for y in 0 .. mineSweeper.height - 1 %}
+        {% for x in 0 .. mineSweeper.width - 1 %}
+            <button {{ mineSweeper.map[y][x] >= 0 ? 'disabled'}} 
+                data-action="live#action" 
+                data-live-action-param="mine"
+                data-live-x-param={{ x }}
+                data-live-y-param={{ y }}
+            >
+                {{ mineSweeper.map[y][x] > 0 ? mineSweeper.map[y][x] }}
+                {% if gameOver and mineSweeper.bombs[y][x] is defined %}
+                    <div class="bomb"></div>
+                    <div id="game-over">GAME OVER</div>
+                {% endif %}
+            </button>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="actions">
+        <button 
+            data-action="live#action"
+            data-live-action-param="reset"
+            data-live-width-param={{ mineSweeper.width }}
+            data-live-height-param={{ mineSweeper.height }}
+            class="reset-button"
+        >
+            {{ 'Rejouer'|upper }}
+        </button>
+    </div>
+</div>  
