@@ -1,6 +1,6 @@
 
 # Mine Sweeper
-A simple application inspired by the famous Minesweeper game, built with Symfony and Symfony UX Live components
+A simple application inspired by the famous Minesweeper game, built with TDD and Symfony UX Live components
 
 ## Run Locally
 
